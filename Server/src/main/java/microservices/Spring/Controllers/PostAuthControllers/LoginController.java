@@ -1,4 +1,4 @@
-package microservices.Spring.Controllers;
+package microservices.Spring.Controllers.PostAuthControllers;
 
 
 import microservices.Spring.classes.Login;
