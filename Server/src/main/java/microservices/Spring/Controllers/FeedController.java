@@ -27,7 +27,7 @@ public class FeedController {
     }
 
 
-    @PostMapping(path = "/register", consumes = "application/json", produces = "application/json")
+    @PostMapping(path = "/list", consumes = "application/json", produces = "application/json")
     PostFeeder postfeeder(@RequestBody PostFeeder postfeeder){
         Date date = new Date();
         long time = date.getTime();
