@@ -34,4 +34,14 @@ public class RegisterController {
         array.add(register);
         return register;
     }
+
+
+    @CrossOrigin("http://localhost:5000")
+    @ResponseStatus(HttpStatus.OK)
+    @PostMapping(path = "/dummy", consumes = "application/json", produces = "application/json")
+    user USER(@RequestBody user USER){
+        USER.setPassword(passwordEncoder.encode(USER.getPassword()));
+        userrepo.save(USER);
+        return USER;
+    }
 }
