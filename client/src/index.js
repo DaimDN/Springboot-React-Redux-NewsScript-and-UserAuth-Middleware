@@ -1,44 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import ReactDOM from 'react-dom';
+import Routing from './Routing/Routing';
 
-class Index extends Component {
-   
-    constructor(props){
-        super(props);
-        this.state = {
-            array: []
-        }
-    }
-
-    async componentDidMount(){
-
-        try {
-
-             await fetch("http://localhost:5000/api/v1").then(res=> res.json()).then(
-                (item)=>{
-                    this.setState({
-                        array: item
-                    })
-                }
-            )
-
-        } catch (error) {
-            console.log(error);
-            
-        }
-
-
+function Runner(){
     
-    }
-    render() {
-        return (
-            <div>
-           hrfeuiuiehis
-                
-            </div>
-        )
-    }
+    return(
+        <Routing/>
+    )
+    
+
 }
 
-
-ReactDOM.render(<Index/>, document.getElementById('root'));
+ReactDOM.render(<Runner/>, document.getElementById('root'));
