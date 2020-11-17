@@ -25,20 +25,9 @@ public class RegisterController {
     @Autowired
     private Userrepo userrepo;
 
-
     @CrossOrigin("http://localhost:5000")
     @ResponseStatus(HttpStatus.OK)
     @PostMapping(path = "/register", consumes = "application/json", produces = "application/json")
-    RegisterUser register(@RequestBody RegisterUser register){
-        register.setPassword(passwordEncoder.encode(register.getPassword()));
-        array.add(register);
-        return register;
-    }
-
-
-    @CrossOrigin("http://localhost:5000")
-    @ResponseStatus(HttpStatus.OK)
-    @PostMapping(path = "/dummy", consumes = "application/json", produces = "application/json")
     user USER(@RequestBody user USER){
         USER.setPassword(passwordEncoder.encode(USER.getPassword()));
         userrepo.save(USER);
