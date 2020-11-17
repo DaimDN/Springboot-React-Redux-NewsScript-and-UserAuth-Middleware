@@ -2,6 +2,7 @@ package microservices.Spring.Controllers.PostAuthControllers;
 
 
 import microservices.Spring.Repository.Repository.Userrepo;
+import microservices.Spring.classes.HomeManage;
 import microservices.Spring.classes.Login;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -37,18 +38,17 @@ public class LoginController {
     @GetMapping(path = "/users", produces = "application/json")
     @Async
     public Object dataset (){
-
-
        Object data=  userrepo.findAllByA();
-
-
-
-
-        return data;
-
+       return data;
 
     }
 
+
+    @GetMapping(path = "*")
+    public Object getError(){
+        HomeManage home = new HomeManage("Error Page doesnt exit");
+        return home;
+    }
 
 
 
